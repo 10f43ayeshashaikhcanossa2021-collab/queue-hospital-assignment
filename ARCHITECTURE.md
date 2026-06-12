@@ -1,0 +1,1 @@
+Frontend ↔ Socket.IO ↔ Express ↔ MongoDB

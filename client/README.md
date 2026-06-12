@@ -1,0 +1,1 @@
+Features: Receptionist, Patient, Doctor dashboards; QR tracking.

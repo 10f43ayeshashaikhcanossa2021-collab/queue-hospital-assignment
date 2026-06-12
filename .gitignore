@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+.env
+.env.*
+coverage
+*.log
+client/.vite
+server/.nyc_output
+server/data

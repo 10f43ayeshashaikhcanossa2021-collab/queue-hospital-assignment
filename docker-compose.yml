@@ -1,0 +1,27 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: queue_cure
+    volumes:
+      - mongo_data:/data/db
+
+  server:
+    build:
+      context: ./server
+    ports:
+      - "5000:5000"
+    environment:
+      PORT: 5000
+      CLIENT_URL: http://localhost:5173
+      MONGODB_URI: mongodb://mongo:27017/queue_cure
+      JWT_SECRET: queue-cure-dev-secret
+      NODE_ENV: production
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:

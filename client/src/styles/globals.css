@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50;
+  font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  background-image:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 30%),
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(248, 250, 252, 1) 0%, rgba(241, 245, 249, 1) 100%);
+}
+
+html.dark body {
+  background-image:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), transparent 28%),
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.16), transparent 26%),
+    linear-gradient(180deg, rgba(2, 6, 23, 1) 0%, rgba(15, 23, 42, 1) 100%);
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+}
+
+.glass-panel {
+  @apply border border-white/60 bg-white/80 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/75;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 1) 0%, rgba(20, 184, 166, 1) 100%);
+}
